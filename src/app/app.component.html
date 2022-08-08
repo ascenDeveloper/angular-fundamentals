@@ -9,9 +9,15 @@
 </head>
 
 <body>
+  <h1>ngIf</h1>
+  <input type="text" required [(ngModel)]="person.name">
+  <p *ngIf="person.name === 'nicolas'">Soy Nicolas</p>
+  <p *ngIf="person.name === 'julian'">Soy Julian</p>
+  <hr>
   <h1>NgModel</h1>
   <p>Nombre {{ person.name }}</p>
-  <input type="text" [(ngModel)]="person.name">
+  <input type="text" required #nameInput="ngModel" [(ngModel)]="person.name">
+  <p>Valid: {{nameInput.valid}}</p>
   <hr />
   <h1>Events</h1>
   <button [disabled]="btnDisabled">Send</button>
